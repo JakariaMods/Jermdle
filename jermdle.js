@@ -131,7 +131,7 @@ submit.addEventListener('click', function () {
         }
         else
             if (guessMonth < videoMonth) {
-                resultCell.innerText = "👈Too late!";
+                resultCell.innerText = "👉Too late!";
             }
             else {
                 resultCell.innerText = "Correct!";
