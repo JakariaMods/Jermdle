@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<title>Jermdle</title>
+
+<script type="module" src="cookies.js"></script>
+<script type="module" src="jermdle.js"></script>
+
+<body>
+    <div class="body-center">
+        <h1>Jermdle</h1>
+        <hr />
+
+        <div>
+            <iframe id="ytVideo" width="100%" height="500" src="" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+            <p class="videoTitle" id="ytTitle"></p>
+
+            <table id="table">
+                <tr id="row0">
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="row1">
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="row2">
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr id="row3">
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <button class="button" id="submit" title="Click the button to submit your guess">January 2012</button>
+            <div>
+                <input class="slider" type="range" min="0" max="10000000" value="0" class="slider" id="slider"
+                    width="100%" title="Move the slider and guess the stream date">
+            </div>
+        </div>
+    </div>
+</body>
+
+<div class="overlay-background" id="overlay">
+    <div class="overlay">
+        <div>Jermdle complete</div>
+        <button class="button" id="share" title="Click the button to copy the results to the clipboard">Share!</button>
+    </div>
+</div>
+
+</html>

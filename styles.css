@@ -1,0 +1,147 @@
+:root {
+  --darkThemeBackground: #202020;
+  --darkThemeForeground: white;
+
+  --green1: #133519;
+  --green2: #205f0b;
+  --green3: #366b13;
+  --green4: #489d22;
+  --green5: #95b61d;
+
+  --lightThemeBackground: white;
+  --lightThemeForeground: black;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  margin: auto;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+}
+
+.number-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.text-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.setting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50%);
+  position: relative;
+}
+
+.body-center {
+  margin: auto;
+  width: 75%;
+  min-width: 500px;
+  max-width: 1000px;
+}
+
+.center {
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.videoTitle {
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--lightThemeBackground);
+    color: var(--lightThemeForeground);
+  }
+
+  .overlay {
+    background-color: var(--lightThemeForeground);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--darkThemeBackground);
+    color: var(--darkThemeForeground);
+  }
+
+  .overlay {
+    background-color: var(--darkThemeBackground);
+  }
+
+  a:link {
+    color: var(--green5);
+  }
+
+  a:visited {
+    color: var(--green4);
+  }
+
+  a:hover {
+    color: var(--green3);
+  }
+
+  a:active {
+    color: var(--green2);
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  width: 50%;
+}
+
+.overlay-background {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  align-content: center;
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 50%;
+}
