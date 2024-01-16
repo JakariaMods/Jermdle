@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI';
 
   margin: auto;
   padding-bottom: 10px;
@@ -95,22 +95,6 @@ button:hover {
 
   .overlay {
     background-color: var(--darkThemeBackground);
-  }
-
-  a:link {
-    color: var(--green5);
-  }
-
-  a:visited {
-    color: var(--green4);
-  }
-
-  a:hover {
-    color: var(--green3);
-  }
-
-  a:active {
-    color: var(--green2);
   }
 }
 

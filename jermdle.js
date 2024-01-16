@@ -110,6 +110,7 @@ submit.addEventListener('click', function () {
 
     guessCell.textContent = months[guessMonth] + " " + guessYear;
     resultCell.style.backgroundColor = 'darkred';
+    resultCell.style.color = 'white';
 
     let correct = false;
     if (guessYear > videoYear) {
