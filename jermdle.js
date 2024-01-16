@@ -150,7 +150,7 @@ submit.addEventListener('click', function () {
 share.addEventListener('click', function () {
     console.log('share');
 
-    let text = "Jermdle - https://Jermdle.com\n" + guessCount + "/4 - ";
+    let text = "Jermdle - https://jermdle.jerma.io\n" + guessCount + "/4 - ";
     for (let i = 0; i < guessCount; i++) {
         let color = document.getElementById("row" + i).getElementsByTagName("td")[1].style.backgroundColor;
 
