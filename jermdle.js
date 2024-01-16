@@ -118,20 +118,20 @@ submit.addEventListener('click', function () {
 
     let correct = false;
     if (guessYear > videoYear) {
-        resultCell.innerText = "Too soon!";
+        resultCell.innerText = "👈Too recent!";
     }
     else if (guessYear < videoYear) {
-        resultCell.innerText = "Too late!";
+        resultCell.innerText = "👉Too late!";
     }
     else {
         resultCell.style.backgroundColor = 'darkgoldenrod';
 
         if (guessMonth > videoMonth) {
-            resultCell.innerText = "Too soon!";
+            resultCell.innerText = "👈Too recent!";
         }
         else
             if (guessMonth < videoMonth) {
-                resultCell.innerText = "Too late!";
+                resultCell.innerText = "👈Too late!";
             }
             else {
                 resultCell.innerText = "Correct!";
