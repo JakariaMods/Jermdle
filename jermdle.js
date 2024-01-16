@@ -51,6 +51,7 @@ String.prototype.hashCode = function () {
 
 const minDate = new Date("2012-01-01"); //Y M D
 const currentDate = new Date();
+console.log(currentDate);
 let guessMonth = minDate.getMonth();
 let guessYear = minDate.getFullYear();
 let guessCount = 0;
@@ -62,12 +63,10 @@ let foundVideo = false;
 let videoId = "";
 let videoTitle = "";
 let videoDate = "";
-console.log(videoIndex);
 while (!foundVideo) {
     videoTitle = titles[videoIndex];
 
     if (months.some(element => videoTitle.includes(element))) {
-        console.log("bad video: " + videoTitle);
         videoIndex++;
     }
     else {
@@ -80,7 +79,6 @@ while (!foundVideo) {
 //Finally load the video on the webpage
 document.getElementById("ytVideo").src = "https://www.youtube-nocookie.com/embed/" + videoId + "?si=XsEbPTBT-QVkH7X4&amp;controls=1&amp;start=60&amp;autoplay=0";
 document.getElementById("ytTitle").textContent = videoTitle;
-console.log('loaded video ' + videoId + ": " + videoTitle + "Published: " + videoDate);
 
 const submit = document.getElementById('submit');
 const share = document.getElementById('share');
@@ -103,7 +101,6 @@ slider.addEventListener('input', function () {
 }, false);
 
 submit.addEventListener('click', function () {
-    console.log('click' + guessMonth + guessYear);
     let videoYear = videoDate.getFullYear();
     let videoMonth = videoDate.getMonth();
 
@@ -148,8 +145,6 @@ submit.addEventListener('click', function () {
 }, false);
 
 share.addEventListener('click', function () {
-    console.log('share');
-
     let text = "Jermdle - https://jakariamods.github.io/Jermdle/\n" + guessCount + "/4 - ";
     for (let i = 0; i < guessCount; i++) {
         let color = document.getElementById("row" + i).getElementsByTagName("td")[1].style.backgroundColor;
