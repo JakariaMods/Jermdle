@@ -32,28 +32,6 @@ button:hover {
   width: 100%;
 }
 
-.number-input {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.text-input {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.setting-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 50%);
-  position: relative;
-}
-
-.body-center {
-  margin: auto;
-  min-width: 500px;
-  max-width: 1000px;
-}
-
 .yt {
   position: relative;
   display: block;
@@ -72,10 +50,17 @@ button:hover {
   border: 0;
 }
 
+.body-center {
+  margin: auto;
+  min-width: 500px;
+  max-width: 1000px;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .body-center{
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 
