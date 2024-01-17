@@ -22,7 +22,6 @@ button {
   margin-bottom: 10px;
   width: 100%;
   font-size: larger;
-  box-shadow: 0px 0px 10px 10px #101010;
 }
 
 button:hover {
@@ -31,7 +30,6 @@ button:hover {
 
 .slider {
   width: 100%;
-  box-shadow: 0px 0px 10px 10px #101010;
 }
 
 .yt {
@@ -103,7 +101,6 @@ button:hover {
 }
 
 table {
-  box-shadow: 0px 0px 10px 10px #101010;
   border-collapse: collapse;
   width: 100%;
 }
