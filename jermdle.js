@@ -88,6 +88,8 @@ const submit = document.getElementById('submit');
 const share = document.getElementById('share');
 const slider = document.getElementById('slider');
 const table = document.getElementById('table');
+const backgroundOverlay = document.getElementById('overlayBackground');
+const overlay = document.getElementById('overlay');
 
 slider.max = monthDiff(currentDate, minDate);
 slider.value = slider.max / 2;
@@ -150,7 +152,7 @@ submit.addEventListener('click', function () {
     if (correct || guessCount == 4) {
         slider.disabled = true;
         submit.disabled = true;
-        document.getElementById("overlay").style.display = "block";
+        backgroundOverlay.style.display = "block";
     }
 }, false);
 
@@ -168,6 +170,21 @@ share.addEventListener('click', function () {
     }
     setClipboard(text);
 }, false);
+
+backgroundOverlay.addEventListener('click', function () {
+    if(!mouseInOverlay){
+        backgroundOverlay.style.display = 'none';
+    }
+}, false);
+
+var mouseInOverlay = false;
+overlay.addEventListener('mouseover', function (event) {
+    mouseInOverlay = true;
+});
+// Fires whenever mouse leaves the element
+overlay.addEventListener('mouseleave', function (event) {
+    mouseInOverlay = false;
+});
 
 async function setClipboard(text) {
     const type = "text/plain";
