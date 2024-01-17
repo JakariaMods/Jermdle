@@ -22,6 +22,7 @@ button {
   margin-bottom: 10px;
   width: 100%;
   font-size: larger;
+  box-shadow: 0px 0px 10px 10px #101010;
 }
 
 button:hover {
@@ -30,9 +31,11 @@ button:hover {
 
 .slider {
   width: 100%;
+  box-shadow: 0px 0px 10px 10px #101010;
 }
 
 .yt {
+  box-shadow: 0px 0px 10px 10px #101010;
   position: relative;
   display: block;
   width: 100%; /* width of iframe wrapper */
@@ -51,6 +54,7 @@ button:hover {
 }
 
 .body-center {
+  
   margin: auto;
   min-width: 500px;
   max-width: 1000px;
@@ -99,6 +103,7 @@ button:hover {
 }
 
 table {
+  box-shadow: 0px 0px 10px 10px #101010;
   border-collapse: collapse;
   width: 100%;
 }

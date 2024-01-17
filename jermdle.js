@@ -104,6 +104,10 @@ slider.addEventListener('input', function () {
     submit.textContent = months[guessDate.getMonth()] + " " + guessDate.getFullYear();
 }, false);
 
+const tooSoonText = "👈Too recent!";
+const tooLateText = "👉Too old!";
+const correctText = "👍Correct!";
+
 submit.addEventListener('click', function () {
     let videoYear = videoDate.getFullYear();
     let videoMonth = videoDate.getMonth();
@@ -118,23 +122,23 @@ submit.addEventListener('click', function () {
 
     let correct = false;
     if (guessYear > videoYear) {
-        resultCell.innerText = "👈Too recent!";
+        resultCell.innerText = tooSoonText;
     }
     else if (guessYear < videoYear) {
-        resultCell.innerText = "👉Too old!";
+        resultCell.innerText = tooLateText;
     }
     else {
         resultCell.style.backgroundColor = 'darkgoldenrod';
 
         if (guessMonth > videoMonth) {
-            resultCell.innerText = "👈Too recent!";
+            resultCell.innerText = tooSoonText;
         }
         else
             if (guessMonth < videoMonth) {
-                resultCell.innerText = "👉Too old!";
+                resultCell.innerText = tooLateText;
             }
             else {
-                resultCell.innerText = "Correct!";
+                resultCell.innerText = correctText;
                 correct = true;
                 resultCell.style.backgroundColor = 'darkgreen';
             }
