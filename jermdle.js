@@ -121,7 +121,7 @@ submit.addEventListener('click', function () {
         resultCell.innerText = "👈Too recent!";
     }
     else if (guessYear < videoYear) {
-        resultCell.innerText = "👉Too late!";
+        resultCell.innerText = "👉Too old!";
     }
     else {
         resultCell.style.backgroundColor = 'darkgoldenrod';
@@ -131,7 +131,7 @@ submit.addEventListener('click', function () {
         }
         else
             if (guessMonth < videoMonth) {
-                resultCell.innerText = "👉Too late!";
+                resultCell.innerText = "👉Too old!";
             }
             else {
                 resultCell.innerText = "Correct!";
