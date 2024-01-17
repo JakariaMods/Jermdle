@@ -90,6 +90,7 @@ const slider = document.getElementById('slider');
 const table = document.getElementById('table');
 
 slider.max = monthDiff(currentDate, minDate);
+slider.value = slider.max / 2;
 
 slider.addEventListener('input', function () {
     let ratio = slider.value / slider.max;
