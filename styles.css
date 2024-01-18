@@ -24,6 +24,10 @@ button {
   font-size: larger;
 }
 
+textarea {
+  width: 100%;
+}
+
 button:hover {
   cursor:pointer;
 }

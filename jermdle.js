@@ -81,7 +81,7 @@ while (!foundVideo) {
 }
 
 //Finally load the video on the webpage
-document.getElementById("ytVideo").src = "https://www.youtube-nocookie.com/embed/" + videoId + "?si=XsEbPTBT-QVkH7X4&amp;controls=1&amp;start=60&amp;autoplay=0";
+document.getElementById("ytVideo").src = "https://www.youtube-nocookie.com/embed/" + videoId + "?si=XsEbPTBT-QVkH7X4&amp;controls=1&amp;start=60&amp;autoplay=1";
 document.getElementById("ytTitle").textContent = videoTitle;
 
 const submit = document.getElementById('submit');
@@ -93,10 +93,17 @@ const overlay = document.getElementById('overlay');
 
 slider.max = monthDiff(currentDate, minDate);
 slider.value = slider.max / 2;
+setGuess(slider.value / slider.max);
 
 slider.addEventListener('input', function () {
     let ratio = slider.value / slider.max;
 
+    setGuess(ratio);
+
+    updateDate();
+}, false);
+
+function setGuess(ratio){
     const difference = currentDate - minDate.getTime();
     const lerpMillis = minDate.getTime() + difference * ratio;
     const guessDate = new Date(lerpMillis);
@@ -104,8 +111,12 @@ slider.addEventListener('input', function () {
     guessMonth = guessDate.getMonth();
     guessYear = guessDate.getFullYear();
 
-    submit.textContent = months[guessDate.getMonth()] + " " + guessDate.getFullYear();
-}, false);
+    updateDate();
+}
+
+function updateDate(){
+    submit.textContent = months[guessMonth] + " " + guessYear;
+}
 
 const tooSoonText = "👈Too recent!";
 const tooLateText = "👉Too old!";
@@ -153,10 +164,20 @@ submit.addEventListener('click', function () {
         slider.disabled = true;
         submit.disabled = true;
         backgroundOverlay.style.display = "block";
+        let resultText = document.getElementById('resultText');
+        let result = document.getElementById('result');
+
+        resultText.innerText = "Jermdle Complete, the correct date was " + months[videoMonth] + " " + videoYear + '.';
+        result.innerText = getResultText();
+        result.select();
     }
 }, false);
 
 share.addEventListener('click', function () {
+    setClipboard(getResultText());
+}, false);
+
+function getResultText(){
     let text = "Jermdle #" + (daysSinceStart - 19737) + " - https://jakariamods.github.io/Jermdle/\n" + guessCount + "/4 - ";
     for (let i = 0; i < guessCount; i++) {
         let color = document.getElementById("row" + i).getElementsByTagName("td")[1].style.backgroundColor;
@@ -168,8 +189,8 @@ share.addEventListener('click', function () {
         else
             text += "🟩";
     }
-    setClipboard(text);
-}, false);
+    return text;
+}
 
 backgroundOverlay.addEventListener('click', function () {
     if(!mouseInOverlay){
@@ -181,7 +202,6 @@ var mouseInOverlay = false;
 overlay.addEventListener('mouseover', function (event) {
     mouseInOverlay = true;
 });
-// Fires whenever mouse leaves the element
 overlay.addEventListener('mouseleave', function (event) {
     mouseInOverlay = false;
 });
