@@ -178,7 +178,7 @@ share.addEventListener('click', function () {
 }, false);
 
 function getResultText(){
-    let text = "Jermdle #" + (daysSinceStart - 19737) + " - https://jakariamods.github.io/Jermdle/\n" + guessCount + "/4 - ";
+    let text = "Jermdle #" + (daysSinceStart - 19737) + " - " + window.location.href + " \n" + guessCount + "/4 - ";
     for (let i = 0; i < guessCount; i++) {
         let color = document.getElementById("row" + i).getElementsByTagName("td")[1].style.backgroundColor;
 
